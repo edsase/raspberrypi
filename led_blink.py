@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import io_settings
 import time
 
 def blink(duration=6):
@@ -12,8 +13,11 @@ def blink(duration=6):
             GPIO.output(19, False)
             time.sleep(0.5)
         
-    finally:\
-        # cleanup
-        GPIO.cleanup()
+    finally:
+        # cleanup if called from this script
+        if __name__ == '__main__':
+            GPIO.cleanup()
+        else:
+            pass
 
 
