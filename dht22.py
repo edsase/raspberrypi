@@ -32,4 +32,4 @@ def get_dht22_data():
 
 
 if __name__ == "__main__":
-    print(get_dht22_data(5))
+    print(get_dht22_data())
