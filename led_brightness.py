@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 led_pin = 19
-GPIO.setup(12, GPIO.OUT)
+GPIO.setup(led_pin, GPIO.OUT)
 
 p = GPIO.PWM(led_pin, 50)  # channel=led_pin frequency=50Hz
 p.start(0)
