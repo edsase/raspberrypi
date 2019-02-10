@@ -8,9 +8,16 @@ LOG_FILE = "./sensor-data/dht22.log"
 
 #  log all data to a file
 
-def log_data(interval):
-    #  check if dht22.log file exists, otherwise create it using w+
-    logfile = open(LOG_FILE, 'w+') 
+def log_data(interval):    
+    # create file if not exist and write headers
+    if not os.path.isfile(LOG_FILE):
+        logfile = open(LOG_FILE, 'w+') 
+        file_headers = "Timestamp,Humidity,Temperature\n"
+        logfile.write(file_headers)
+        logfile.close()
+
+    # open file for normal appending
+    logfile = open(LOG_FILE, 'a')
 
     while True:
         # read data
@@ -18,13 +25,8 @@ def log_data(interval):
         # convert data to csv string
         csv_string = '{timestamp},{humidity},{temperature}\n'.format(**data._asdict())
         try:    
-            # save data in file, add headers if file is empty
-            if os.path.getsize(LOG_FILE) > 0:    
-                logfile.write(csv_string)
-            else:
-                # write headers
-                file_headers = "Timestamp,Humidity,Temperature\n"
-                logfile.write(file_headers + csv_string)
+            # save data in file, add headers if file is empty  
+            logfile.write(csv_string)
             sleep(interval)
         except KeyboardInterrupt:
             logfile.close()
