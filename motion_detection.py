@@ -1,9 +1,6 @@
 import RPi.GPIO as GPIO
+import io_settings
 from led_blink import blink
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(23, GPIO.IN)
-
 
 
 while True:

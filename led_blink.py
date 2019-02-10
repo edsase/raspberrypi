@@ -2,8 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 def blink(duration=6):
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(19, GPIO.OUT)
+
     endtime = time.time() + duration
 
     try:
