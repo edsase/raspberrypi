@@ -20,7 +20,7 @@ end_time = time.time() + DURATION
 def get_dht22_data(interval):
     """ gets data from the dht22 sensor every interval seconds"""
 
-    data_point = namedtuple('datapoint', 'date', 'humidity', 'temperature' )
+    data_point = namedtuple('datapoint', 'date humidity temperature' )
 
     try:
         while True:                # Loop will run forever
