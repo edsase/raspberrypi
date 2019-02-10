@@ -26,10 +26,9 @@ def log_data(interval):
                 file_headers = "Timestamp,Humidity,Temperature\n"
                 logfile.write(file_headers + csv_string)
             sleep(interval)
-        except:
-            pass
-        finally:
+        except KeyboardInterrupt:
             logfile.close()
+
 
 
 # every x intervals, copy logged data in file to usb folder if usb is in drive
