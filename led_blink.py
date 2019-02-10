@@ -7,13 +7,15 @@ GPIO.setup(19, GPIO.OUT)
 DURATION = 20
 endtime = time.time() + DURATION
 
-while time.time() < endtime:
-    GPIO.output(19, True)
-    time.sleep(0.5)
-    GPIO.output(19, False)
-    time.sleep(0.5)
-
-# cleanup
-GPIO.cleanup()
+try:
+    while time.time() < endtime:
+        GPIO.output(19, True)
+        time.sleep(0.5)
+        GPIO.output(19, False)
+        time.sleep(0.5)
+    
+finally:\
+    # cleanup
+    GPIO.cleanup()
 
 
