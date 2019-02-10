@@ -17,18 +17,15 @@ end_time = time.time() + DURATION
 #     pass  			# Go to next line
 
 
-def get_dht22_data(interval):
+def get_dht22_data():
     """ gets data from the dht22 sensor every interval seconds"""
 
     data_point = namedtuple('datapoint', 'date humidity temperature' )
-
     try:
-        while True:                # Loop will run forever
-            humi, temp = dht.read_retry(dht.DHT22, 8)  # Reading humidity and temperature
-            # get current time
-            dt = datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')
-            data = data_point(dt, humi, temp)
-            sleep(interval)
+        humi, temp = dht.read_retry(dht.DHT22, 8)  # Reading humidity and temperature
+        # get current time
+        dt = datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')
+        data = data_point(dt, humi, temp)
     # If keyboard Interrupt is pressed
     except KeyboardInterrupt:
         pass  			# Go to next line
