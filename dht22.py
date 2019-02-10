@@ -24,7 +24,7 @@ def get_dht22_data():
     try:
         humi, temp = dht.read_retry(dht.DHT22, 8)  # Reading humidity and temperature
         # get current time
-        dt = datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')
+        dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         data = data_point(dt, humi, temp)
     # If keyboard Interrupt is pressed
     except KeyboardInterrupt:

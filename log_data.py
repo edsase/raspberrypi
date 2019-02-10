@@ -4,7 +4,7 @@ import time
 import os
 from dht22 import get_dht22_data
 
-LOG_FILE = "../sensor-data/dht22.log"
+LOG_FILE = "./sensor-data/dht22.log"
 
 #  log all data to a file
 
