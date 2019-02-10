@@ -10,5 +10,5 @@ while True:
     channel = GPIO.wait_for_edge(23, GPIO.RISING)
     if channel is not None:
         print('Motion detected')
-        sleep(1)
+        #sleep(1)
 
