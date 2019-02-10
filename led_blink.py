@@ -4,7 +4,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(19, GPIO.OUT)
 
-DURATION = 10000
+DURATION = 20
 endtime = time.time() + DURATION
 
 while time.time() < endtime:
