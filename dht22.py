@@ -28,7 +28,8 @@ def get_dht22_data():
         data = data_point(dt, humi, temp)
     # If keyboard Interrupt is pressed
     except KeyboardInterrupt:
-        pass  			# Go to next line
+        data = None  			# Go to next line
+    return data
 
 
 if __name__ == "__main__":
