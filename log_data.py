@@ -1,10 +1,11 @@
 import Adafruit_DHT as dht    # Importing Adafruit library for DHT22
 from time import sleep           # Impoting sleep from time library to add delay
 import time
+from datetime import datetime
 import os
 from dht22 import get_dht22_data
 
-LOG_FILE = "./sensor-data/dht22.log"
+LOG_FILE = "./sensor-data/dht22_{}.log".format(datetime.now().strftime('%Y-%m-%d'))
 
 #  log all data to a file
 
