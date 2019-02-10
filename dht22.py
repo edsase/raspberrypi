@@ -20,7 +20,7 @@ end_time = time.time() + DURATION
 def get_dht22_data():
     """ gets data from the dht22 sensor every interval seconds"""
 
-    data_point = namedtuple('datapoint', 'date humidity temperature' )
+    data_point = namedtuple('datapoint', 'timestamp humidity temperature' )
     try:
         humi, temp = dht.read_retry(dht.DHT22, 8)  # Reading humidity and temperature
         # get current time
