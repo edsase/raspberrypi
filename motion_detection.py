@@ -21,7 +21,7 @@ def timestamp_motion_detection(val):
 
     data = data(dt, 1)
     print(data)
-    print('Motion detected')
+    print('Motion detected') 
     blink(8)
 
     return data
@@ -31,5 +31,9 @@ if __name__ == "__main__":
     # add rising edge detection on channel 23
     GPIO.add_event_detect(23, GPIO.RISING, callback=timestamp_motion_detection)  
     while True:
-        pass
+        try:
+            pass
+            
+        except KeyboardInterrupt:
+            GPIO.cleanup()
         
