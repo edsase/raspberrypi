@@ -22,7 +22,7 @@ def timestamp_motion_detection():
     data = data(dt, 1)
     print(data)
 
-    return data(dt, 1)
+    return data
     
     
 if __name__ == "__main__":
