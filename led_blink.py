@@ -12,6 +12,9 @@ def blink(duration=6):
             time.sleep(0.5)
             GPIO.output(19, False)
             time.sleep(0.5)
+
+    except KeyboardInterrupt:
+        GPIO.cleanup()
         
     finally:
         # cleanup if called from this script
