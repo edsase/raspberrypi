@@ -30,3 +30,6 @@ def timestamp_motion_detection():
 if __name__ == "__main__":
     # add rising edge detection on channel 23
     GPIO.add_event_detect(23, GPIO.RISING, callback=timestamp_motion_detection)  
+    while True:
+        pass
+        
