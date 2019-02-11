@@ -10,7 +10,7 @@ from led_blink import blink
 #         blink(8)
 
 
-def timestamp_motion_detection():
+def timestamp_motion_detection(val):
     from datetime import datetime
     from collections import namedtuple
 
